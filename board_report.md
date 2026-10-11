@@ -1,6 +1,6 @@
 # Security Governance Board Report
 
-**Generated:** 2026-10-11T09:57:13+01:00
+**Generated:** 11 October 2026 at 10:12 AM WAT
 
 ## Executive summary
 

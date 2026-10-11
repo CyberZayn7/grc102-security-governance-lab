@@ -15,6 +15,14 @@ def now() -> str:
     return dt.datetime.now().astimezone().isoformat(timespec="seconds")
 
 
+def human_now() -> str:
+    return dt.datetime.now().astimezone().strftime("%d %B %Y at %I:%M %p %Z")
+
+
+def human_time(value: str) -> str:
+    return dt.datetime.fromisoformat(value).strftime("%d %B %Y at %I:%M %p %Z")
+
+
 def stamp() -> str:
     return dt.datetime.now().strftime("%Y%m%d_%H%M%S")
 

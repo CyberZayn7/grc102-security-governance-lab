@@ -7,7 +7,7 @@ import html
 import subprocess
 from pathlib import Path
 
-from lab_utils import ROOT, now
+from lab_utils import ROOT, human_now
 
 CHROME = Path("/Applications/Google Chrome.app/Contents/MacOS/Google Chrome")
 SHOTS = ROOT / "evidence" / "screenshots"
@@ -42,12 +42,12 @@ def figure(number: int, title: str, explanation: str) -> str:
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--student-name", default="[ADD STUDENT NAME]")
-    parser.add_argument("--student-id", default="[ADD STUDENT ID]")
+    parser.add_argument("--student-name", default="Zainab Umar Shuaibu")
+    parser.add_argument("--student-id", default="C11/26/CGRCE/17194")
     args = parser.parse_args()
     rendered = {number: figure(number, title, text) for number, title, text in FIGURES}
     OUTPUT_HTML.write_text(f"""<!doctype html><html lang=en><meta charset=utf-8><title>GRC102 Lab 8 Evidence Report</title><style>@page{{size:A4;margin:18mm}}body{{font:11pt Arial;color:#172b3a;line-height:1.45}}h1{{font-size:24pt}}h2{{color:#134e6f;border-bottom:2px solid #36a2a8;padding-bottom:5px;page-break-before:always}}h2.first{{page-break-before:auto}}figure{{margin:18px 0;page-break-inside:avoid}}img{{width:100%;border:1px solid #b8c4cc}}figcaption{{font-size:9pt;color:#415466;margin-top:5px}}.cover{{height:80vh;display:flex;flex-direction:column;justify-content:center}}.notice{{background:#fff7df;border-left:5px solid #d68b00;padding:12px}}li{{margin-bottom:6px}}</style>
-<section class=cover><h1>GRC102 Security Governance Simulation</h1><h3>Practical Lab 8: Monitoring, Auditing Controls and Executive Reporting</h3><p><b>Student:</b> {html.escape(args.student_name)}</p><p><b>Student ID:</b> {html.escape(args.student_id)}</p><p><b>Generated:</b> {html.escape(now())}</p><p><b>Environment:</b> Isolated local Docker environment</p><p class=notice>This report contains evidence generated from an authorised local simulation using synthetic data. The student must verify the report and replace the identity placeholder before submission.</p></section>
+<section class=cover><h1>GRC102 Security Governance Simulation</h1><h3>Practical Lab 8: Monitoring, Auditing Controls and Executive Reporting</h3><p><b>Student:</b> {html.escape(args.student_name)}</p><p><b>Student ID:</b> {html.escape(args.student_id)}</p><p><b>Generated:</b> {html.escape(human_now())}</p><p><b>Environment:</b> Isolated local Docker environment</p></section>
 <h2 class=first>Part 1 — Setting Up a Simulated Environment</h2><p>The baseline combines an intentionally vulnerable Struts training service, a database containing three explicitly synthetic rows, and a monitoring container on one shared network. Loopback-only port binding prevents external exposure. This models delayed patching, weak authentication, and insufficient segmentation while limiting the activity to the authorised host.</p>{rendered[1]}{rendered[2]}{rendered[3]}{rendered[4]}
 <h2>Part 2 — Analysing Security Governance Failures</h2><p>The safe request confirmed whether the S2-045 response behaviour was present; it did not execute operating-system commands or access the database. The analysis identified failures in remediation, access control, architecture, monitoring, policy enforcement, and executive accountability. These mirror governance lessons from Equifax while avoiding a claim that the small simulation reproduces the scale or impact of that incident.</p>{rendered[5]}{rendered[6]}
 <h2>Part 3 — Implementing Security Governance Controls</h2><p>The secure configuration replaces the vulnerable training service, removes default credentials, keeps the database off host ports, and separates frontend and internal data networks. Monitoring captures dated service evidence, while the oversight register assigns owners, review dates, thresholds, and escalation routes. Verification uses direct container and HTTP checks rather than relying solely on implementation status.</p>{rendered[7]}{rendered[8]}{rendered[9]}

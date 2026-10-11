@@ -6,7 +6,7 @@ import argparse
 import html
 from pathlib import Path
 
-from lab_utils import ROOT, load_json, now, save_json
+from lab_utils import ROOT, human_now, load_json, now, save_json
 
 DATA = ROOT / "governance_data.json"
 
@@ -46,7 +46,7 @@ class GovernanceTracker:
         )
         output.write_text(f"""<!doctype html><html lang=en><meta charset=utf-8><title>Governance Dashboard</title>
 <style>body{{font:16px system-ui;margin:40px;background:#f4f7fb;color:#17324d}}section{{display:flex;gap:12px;flex-wrap:wrap}}article{{background:white;padding:20px;border-radius:10px;min-width:120px;box-shadow:0 2px 8px #ccd}}article b{{font-size:30px;display:block}}article span{{color:#52677c}}table{{margin-top:24px;background:white;border-collapse:collapse;width:100%}}th,td{{padding:12px;border-bottom:1px solid #dde4ea;text-align:left}}</style>
-<h1>Security Governance Baseline</h1><p>Generated {html.escape(now())}</p><section>{cards}</section><h2>Open Risks</h2><table><tr><th>ID</th><th>Risk</th><th>Level</th><th>Owner</th><th>Status</th></tr>{rows}</table></html>""", encoding="utf-8")
+<h1>Security Governance Baseline</h1><p>Generated {html.escape(human_now())}</p><section>{cards}</section><h2>Open Risks</h2><table><tr><th>ID</th><th>Risk</th><th>Level</th><th>Owner</th><th>Status</th></tr>{rows}</table></html>""", encoding="utf-8")
         return output
 
 

@@ -1,6 +1,6 @@
 # Governance Controls Verification Report
 
-Generated: 2026-10-11T09:57:13+01:00
+Generated: 11 October 2026 at 09:57 AM WAT
 
 | Control | Result | Evidence |
 |---|---|---|

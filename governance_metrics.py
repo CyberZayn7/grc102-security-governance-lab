@@ -9,7 +9,7 @@ import zlib
 from pathlib import Path
 
 from governance_tracker import GovernanceTracker
-from lab_utils import EVIDENCE, ROOT, latest, load_json, now
+from lab_utils import EVIDENCE, ROOT, human_now, latest, load_json
 
 
 def png_chunk(kind: bytes, data: bytes) -> bytes:
@@ -64,11 +64,11 @@ def generate():
         for m in metrics
     )
     figures = "".join(f"<figure><img src='metrics_visualizations/metric_{i}.png' alt='Baseline and current bars for {html.escape(m['name'])}'><figcaption>Figure {i}: {html.escape(m['name'])} — red is baseline; green is current.</figcaption></figure>" for i, m in enumerate(metrics, 1))
-    (ROOT / "executive_dashboard.html").write_text(f"""<!doctype html><html lang=en><meta charset=utf-8><meta name=viewport content='width=device-width'><title>Executive Security Governance Dashboard</title><style>body{{font:16px system-ui;margin:35px;color:#17324d;background:#f4f7fb}}header,table,figure{{background:white;padding:20px;margin:15px 0;border-radius:10px}}table{{border-collapse:collapse;width:100%}}th,td{{padding:10px;text-align:left;border-bottom:1px solid #dde4ea}}img{{max-width:100%}}figure{{display:inline-block;width:44%;vertical-align:top}}.notice{{border-left:5px solid #d97706;padding-left:12px}}</style><header><h1>Executive Security Governance Dashboard</h1><p>Generated {html.escape(now())}</p><p class=notice>Baseline and current values are derived from this isolated simulation's saved evidence; they are not production measurements.</p></header><table><tr><th>Metric</th><th>Baseline</th><th>Current</th><th>Target</th><th>Status</th></tr>{rows}</table>{figures}</html>""", encoding="utf-8")
+    (ROOT / "executive_dashboard.html").write_text(f"""<!doctype html><html lang=en><meta charset=utf-8><meta name=viewport content='width=device-width'><title>Executive Security Governance Dashboard</title><style>body{{font:16px system-ui;margin:35px;color:#17324d;background:#f4f7fb}}header,table,figure{{background:white;padding:20px;margin:15px 0;border-radius:10px}}table{{border-collapse:collapse;width:100%}}th,td{{padding:10px;text-align:left;border-bottom:1px solid #dde4ea}}img{{max-width:100%}}figure{{display:inline-block;width:44%;vertical-align:top}}.notice{{border-left:5px solid #d97706;padding-left:12px}}</style><header><h1>Executive Security Governance Dashboard</h1><p>Generated {html.escape(human_now())}</p><p class=notice>Baseline and current values are derived from this isolated simulation's saved evidence; they are not production measurements.</p></header><table><tr><th>Metric</th><th>Baseline</th><th>Current</th><th>Target</th><th>Status</th></tr>{rows}</table>{figures}</html>""", encoding="utf-8")
     metric_rows = "\n".join(f"| {m['name']} | {m['baseline']}{m['unit']} | {m['current']}{m['unit']} | {m['target']}{m['unit']} |" for m in metrics)
     (ROOT / "board_report.md").write_text(f"""# Security Governance Board Report
 
-**Generated:** {now()}
+**Generated:** {human_now()}
 
 ## Executive summary
 

@@ -54,7 +54,7 @@ python3 implement_governance_controls.py --verify
 python3 vulnerability_scanner.py --mode post-control
 python3 governance_metrics.py
 python3 capture_evidence.py post-control
-python3 build_evidence_report.py --student-name "Learner Name" --student-id "Student ID"
+python3 build_evidence_report.py --student-name "Zainab Umar Shuaibu" --student-id "C11/26/CGRCE/17194"
 ```
 
 ## Evidence index
@@ -103,5 +103,5 @@ docker compose -f docker-compose.secure.yml down -v
 
 ## Academic integrity
 
-This repository is an assessment aid, not a substitute for the learner's own work. The submitting learner must understand the implementation, capture evidence from an authorised run, replace the report identity placeholder, acknowledge assistance and sources as required by course policy, and never present generated or unverified output as observed fact.
+This repository is an assessment aid, not a substitute for the learner's own work. The submitting learner must understand the implementation, verify the report details, acknowledge assistance and sources as required by course policy, and never present generated or unverified output as observed fact.
 

@@ -8,7 +8,7 @@ import secrets
 import subprocess
 
 from governance_tracker import GovernanceTracker
-from lab_utils import EVIDENCE, ROOT, docker_networks, load_json, now, run, save_json
+from lab_utils import EVIDENCE, ROOT, docker_networks, human_time, load_json, now, run, save_json
 from patch_management import PATCHES, apply as apply_patch_record
 from vulnerability_scanner import struts_check
 
@@ -71,7 +71,7 @@ def verify() -> dict:
     rows = "\n".join(f"| {t['control']} | {'PASS' if t['passed'] else 'FAIL'} | {t['evidence']} |" for t in tests)
     (ROOT / "controls_report.md").write_text(f"""# Governance Controls Verification Report
 
-Generated: {report['verified_at']}
+Generated: {human_time(report['verified_at'])}
 
 | Control | Result | Evidence |
 |---|---|---|
