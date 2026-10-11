@@ -54,7 +54,7 @@ python3 implement_governance_controls.py --verify
 python3 vulnerability_scanner.py --mode post-control
 python3 governance_metrics.py
 python3 capture_evidence.py post-control
-python3 build_evidence_report.py
+python3 build_evidence_report.py --student-name "Learner Name" --student-id "Student ID"
 ```
 
 ## Evidence index
