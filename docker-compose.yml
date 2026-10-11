@@ -1,0 +1,35 @@
+services:
+  web:
+    image: vulhub/struts2:2.3.30
+    platform: linux/amd64
+    container_name: web_server
+    ports:
+      - "127.0.0.1:8080:8080"
+    networks: [secgov_baseline]
+
+  database:
+    image: mysql:5.7
+    platform: linux/amd64
+    container_name: database_server
+    environment:
+      MYSQL_ROOT_PASSWORD: ${BASELINE_DB_ROOT_PASSWORD:-password}
+      MYSQL_DATABASE: customer_data
+      MYSQL_USER: app_user
+      MYSQL_PASSWORD: ${BASELINE_DB_PASSWORD:-app_password}
+    volumes:
+      - ./database_init:/docker-entrypoint-initdb.d:ro
+      - baseline_db:/var/lib/mysql
+    networks: [secgov_baseline]
+
+  monitoring:
+    image: alpine:3.20
+    container_name: monitoring_server
+    command: tail -f /dev/null
+    networks: [secgov_baseline]
+
+networks:
+  secgov_baseline:
+
+volumes:
+  baseline_db:
+

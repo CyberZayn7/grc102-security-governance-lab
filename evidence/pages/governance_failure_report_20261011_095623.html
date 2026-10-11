@@ -1,0 +1,56 @@
+<!doctype html><html lang=en><meta charset=utf-8><style>body{font:18px system-ui;margin:36px;color:#17324d}pre{white-space:pre-wrap;background:#101923;color:#d7e4ef;padding:24px;border-radius:8px;font:15px ui-monospace;min-height:420px}footer{color:#52677c}</style><h1>Governance failure analysis</h1><pre>{
+  &quot;generated_at&quot;: &quot;2026-10-11T09:56:23+01:00&quot;,
+  &quot;source&quot;: &quot;evidence/baseline/vulnerability_report_20261011_095623.json&quot;,
+  &quot;total_failures&quot;: 6,
+  &quot;failures&quot;: [
+    {
+      &quot;category&quot;: &quot;Patch and Vulnerability Management&quot;,
+      &quot;finding_id&quot;: &quot;CVE-2017-5638&quot;,
+      &quot;failure&quot;: &quot;Apache Struts S2-045&quot;,
+      &quot;impact&quot;: &quot;Known critical weakness remained exposed&quot;,
+      &quot;accountable_owner&quot;: &quot;Application Owner&quot;,
+      &quot;recommendation&quot;: &quot;Replace the component and enforce a seven-day critical patch SLA&quot;
+    },
+    {
+      &quot;category&quot;: &quot;Authentication and Access Control&quot;,
+      &quot;finding_id&quot;: &quot;DB-AUTH-001&quot;,
+      &quot;failure&quot;: &quot;Default database credentials&quot;,
+      &quot;impact&quot;: &quot;Default database credentials permit unauthorised access&quot;,
+      &quot;accountable_owner&quot;: &quot;Database Owner&quot;,
+      &quot;recommendation&quot;: &quot;Use unique secrets and least-privilege accounts&quot;
+    },
+    {
+      &quot;category&quot;: &quot;Security Architecture&quot;,
+      &quot;finding_id&quot;: &quot;NET-SEG-001&quot;,
+      &quot;failure&quot;: &quot;Insufficient network segmentation&quot;,
+      &quot;impact&quot;: &quot;A shared network enables lateral movement&quot;,
+      &quot;accountable_owner&quot;: &quot;Network Owner&quot;,
+      &quot;recommendation&quot;: &quot;Separate frontend and data networks&quot;
+    },
+    {
+      &quot;category&quot;: &quot;Monitoring and Detection&quot;,
+      &quot;finding_id&quot;: &quot;GOV-MON-001&quot;,
+      &quot;failure&quot;: &quot;No effective baseline alerting&quot;,
+      &quot;impact&quot;: &quot;Malicious activity may remain undetected&quot;,
+      &quot;accountable_owner&quot;: &quot;Security Operations&quot;,
+      &quot;recommendation&quot;: &quot;Monitor critical services and escalate alerts&quot;
+    },
+    {
+      &quot;category&quot;: &quot;Policy Enforcement&quot;,
+      &quot;finding_id&quot;: &quot;GOV-POL-001&quot;,
+      &quot;failure&quot;: &quot;Policies exist without verified implementation&quot;,
+      &quot;impact&quot;: &quot;Documented intent does not reduce technical risk&quot;,
+      &quot;accountable_owner&quot;: &quot;CISO&quot;,
+      &quot;recommendation&quot;: &quot;Require evidence-backed control attestations&quot;
+    },
+    {
+      &quot;category&quot;: &quot;Metrics and Accountability&quot;,
+      &quot;finding_id&quot;: &quot;GOV-MET-001&quot;,
+      &quot;failure&quot;: &quot;Metrics are not tied to remediation decisions&quot;,
+      &quot;impact&quot;: &quot;Overdue high-risk work may not be escalated&quot;,
+      &quot;accountable_owner&quot;: &quot;Executive Risk Committee&quot;,
+      &quot;recommendation&quot;: &quot;Assign thresholds, owners, deadlines, and escalation rules&quot;
+    }
+  ]
+}
+</pre><footer>Failures derived from the saved baseline scan.</footer></html>

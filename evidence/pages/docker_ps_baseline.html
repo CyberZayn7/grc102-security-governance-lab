@@ -1,0 +1,5 @@
+<!doctype html><html lang=en><meta charset=utf-8><style>body{font:18px system-ui;margin:36px;color:#17324d}pre{white-space:pre-wrap;background:#101923;color:#d7e4ef;padding:24px;border-radius:8px;font:15px ui-monospace;min-height:420px}footer{color:#52677c}</style><h1>Baseline Docker environment</h1><pre>NAME                IMAGE                   COMMAND                  SERVICE      CREATED          STATUS          PORTS
+database_server     mysql:5.7               &quot;docker-entrypoint.s…&quot;   database     22 seconds ago   Up 21 seconds   3306/tcp, 33060/tcp
+monitoring_server   alpine:3.20             &quot;tail -f /dev/null&quot;      monitoring   22 seconds ago   Up 21 seconds   
+web_server          vulhub/struts2:2.3.30   &quot;/usr/local/bin/mvn-…&quot;   web          22 seconds ago   Up 21 seconds   127.0.0.1:8080-&gt;8080/tcp
+</pre><footer>Actual docker compose ps output from the isolated lab.</footer></html>

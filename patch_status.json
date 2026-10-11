@@ -1,0 +1,20 @@
+{
+  "PATCH-001": {
+    "name": "Replace vulnerable Struts training image",
+    "status": "Applied in secure lab configuration",
+    "applied_at": "2026-10-11T09:56:52+01:00",
+    "owner": "Security Engineer"
+  },
+  "PATCH-002": {
+    "name": "Remove default database credentials",
+    "status": "Applied in secure lab configuration",
+    "applied_at": "2026-10-11T09:56:52+01:00",
+    "owner": "Security Engineer"
+  },
+  "PATCH-003": {
+    "name": "Separate frontend and data networks",
+    "status": "Applied in secure lab configuration",
+    "applied_at": "2026-10-11T09:56:52+01:00",
+    "owner": "Security Engineer"
+  }
+}

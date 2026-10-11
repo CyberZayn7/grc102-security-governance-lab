@@ -1,0 +1,112 @@
+{
+  "policies": [
+    {
+      "id": "POL-001",
+      "name": "Critical Patch Management",
+      "owner": "CISO",
+      "status": "Active",
+      "review_date": "2026-12-31"
+    },
+    {
+      "id": "POL-002",
+      "name": "Vulnerability Management",
+      "owner": "Security Manager",
+      "status": "Active",
+      "review_date": "2026-12-31"
+    }
+  ],
+  "controls": [
+    {
+      "id": "CTL-001",
+      "name": "Monthly vulnerability scan",
+      "owner": "Security Engineer",
+      "status": "Partially Implemented",
+      "policy_id": "POL-002"
+    },
+    {
+      "id": "CTL-002",
+      "name": "Critical patch verification",
+      "owner": "Application Owner",
+      "policy_id": "POL-001",
+      "status": "Implemented",
+      "implemented_at": "2026-10-11T09:56:52+01:00",
+      "review_date": "2027-01-31"
+    },
+    {
+      "id": "CTL-003",
+      "name": "Frontend/data network segmentation",
+      "owner": "Network Owner",
+      "policy_id": "POL-002",
+      "status": "Implemented",
+      "implemented_at": "2026-10-11T09:56:52+01:00",
+      "review_date": "2027-01-31"
+    },
+    {
+      "id": "CTL-004",
+      "name": "Least-privilege database authentication",
+      "owner": "Database Owner",
+      "policy_id": "POL-002",
+      "status": "Implemented",
+      "implemented_at": "2026-10-11T09:56:52+01:00",
+      "review_date": "2027-01-31"
+    },
+    {
+      "id": "CTL-005",
+      "name": "Critical service monitoring",
+      "owner": "Security Operations",
+      "policy_id": "POL-002",
+      "status": "Implemented",
+      "implemented_at": "2026-10-11T09:56:52+01:00",
+      "review_date": "2027-01-31"
+    },
+    {
+      "id": "CTL-006",
+      "name": "Executive security oversight",
+      "owner": "CEO",
+      "policy_id": "POL-001",
+      "status": "Implemented",
+      "implemented_at": "2026-10-11T09:56:52+01:00",
+      "review_date": "2027-01-31"
+    }
+  ],
+  "risks": [
+    {
+      "id": "RISK-001",
+      "name": "Unpatched internet-facing component",
+      "owner": "Application Owner",
+      "likelihood": "High",
+      "impact": "High",
+      "risk_level": "Critical",
+      "status": "Open"
+    }
+  ],
+  "incidents": [
+    {
+      "id": "INC-001",
+      "name": "Simulated web compromise",
+      "owner": "Incident Manager",
+      "severity": "High",
+      "status": "Open",
+      "date": "2026-10-11T09:56:22+01:00"
+    }
+  ],
+  "metrics": [
+    {
+      "id": "MET-001",
+      "name": "Critical Patch Compliance",
+      "owner": "CISO",
+      "target": 95,
+      "actual": 67,
+      "status": "Below Target"
+    }
+  ],
+  "audits": [
+    {
+      "id": "AUD-001",
+      "name": "Security Governance Review",
+      "owner": "Internal Audit",
+      "status": "Completed",
+      "finding": "Patch and segmentation controls require improvement"
+    }
+  ]
+}

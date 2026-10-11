@@ -1,0 +1,11 @@
+{
+  "timestamp": "2026-10-11T09:56:23+01:00",
+  "authorised_scope": "Local Docker lab only",
+  "attack_type": "Safe S2-045 detection simulation",
+  "target": "http://127.0.0.1:8080/",
+  "success": true,
+  "data_accessed": false,
+  "records_affected": 0,
+  "evidence": "X-Vulnerable response header present",
+  "note": "No command execution, database query, or data exfiltration was attempted."
+}

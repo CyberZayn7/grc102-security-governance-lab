@@ -1,0 +1,55 @@
+{
+  "generated_at": "2026-10-11T09:56:23+01:00",
+  "source": "evidence/baseline/vulnerability_report_20261011_095623.json",
+  "total_failures": 6,
+  "failures": [
+    {
+      "category": "Patch and Vulnerability Management",
+      "finding_id": "CVE-2017-5638",
+      "failure": "Apache Struts S2-045",
+      "impact": "Known critical weakness remained exposed",
+      "accountable_owner": "Application Owner",
+      "recommendation": "Replace the component and enforce a seven-day critical patch SLA"
+    },
+    {
+      "category": "Authentication and Access Control",
+      "finding_id": "DB-AUTH-001",
+      "failure": "Default database credentials",
+      "impact": "Default database credentials permit unauthorised access",
+      "accountable_owner": "Database Owner",
+      "recommendation": "Use unique secrets and least-privilege accounts"
+    },
+    {
+      "category": "Security Architecture",
+      "finding_id": "NET-SEG-001",
+      "failure": "Insufficient network segmentation",
+      "impact": "A shared network enables lateral movement",
+      "accountable_owner": "Network Owner",
+      "recommendation": "Separate frontend and data networks"
+    },
+    {
+      "category": "Monitoring and Detection",
+      "finding_id": "GOV-MON-001",
+      "failure": "No effective baseline alerting",
+      "impact": "Malicious activity may remain undetected",
+      "accountable_owner": "Security Operations",
+      "recommendation": "Monitor critical services and escalate alerts"
+    },
+    {
+      "category": "Policy Enforcement",
+      "finding_id": "GOV-POL-001",
+      "failure": "Policies exist without verified implementation",
+      "impact": "Documented intent does not reduce technical risk",
+      "accountable_owner": "CISO",
+      "recommendation": "Require evidence-backed control attestations"
+    },
+    {
+      "category": "Metrics and Accountability",
+      "finding_id": "GOV-MET-001",
+      "failure": "Metrics are not tied to remediation decisions",
+      "impact": "Overdue high-risk work may not be escalated",
+      "accountable_owner": "Executive Risk Committee",
+      "recommendation": "Assign thresholds, owners, deadlines, and escalation rules"
+    }
+  ]
+}

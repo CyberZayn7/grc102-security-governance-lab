@@ -1,0 +1,33 @@
+{
+  "verified_at": "2026-10-11T09:57:13+01:00",
+  "authorised_scope": "Local Docker lab only",
+  "tests": [
+    {
+      "control": "Patch management",
+      "passed": true,
+      "evidence": "Exploit-detection header absent"
+    },
+    {
+      "control": "Database authentication",
+      "passed": true,
+      "evidence": "Former root/password credential rejected"
+    },
+    {
+      "control": "Network segmentation",
+      "passed": true,
+      "evidence": "web=['grc102-security-governance-lab_frontend']; database=['grc102-security-governance-lab_data']"
+    },
+    {
+      "control": "Monitoring",
+      "passed": true,
+      "evidence": "evidence/post-control/monitoring_snapshot.txt"
+    },
+    {
+      "control": "Governance oversight",
+      "passed": true,
+      "evidence": "5/5 controls have owners and review dates"
+    }
+  ],
+  "passed": 5,
+  "total": 5
+}
